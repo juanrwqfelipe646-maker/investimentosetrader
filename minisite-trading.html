@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trading para Iniciantes — E-book</title>
+<style>
+:root{--bg:#f3f8f6;--bg2:#e4efeb;--tx:#0b1a1f;--mu:#4a6068;--card:#fff;--ln:#cfe0da;--gr:#12a83a;--grl:#3be05a;--rd:#d61f2c;--ink:#041320;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#050c12;--bg2:#0a1a1f;--tx:#eaf6f1;--mu:#93b0a8;--card:#0b1f22;--ln:#1d3d3a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#050c12;--bg2:#0a1a1f;--tx:#eaf6f1;--mu:#93b0a8;--card:#0b1f22;--ln:#1d3d3a;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.55 'Helvetica Neue',Arial,sans-serif}
+.w{max-width:960px;margin:0 auto;padding:0 20px}
+h1,h2,.imp{font-family:Impact,'Anton','Arial Narrow Bold','Arial Black',sans-serif;font-weight:400;letter-spacing:.5px;line-height:1.05;margin:0}
+section{padding:56px 0}
+.hero{padding:48px 0 56px;background:var(--bg2);overflow:hidden}
+.hero .w{display:grid;gap:32px;grid-template-columns:1.1fr .9fr;align-items:center}
+h1{font-size:clamp(38px,7vw,68px)}
+.brush{display:inline-block;background:var(--grl);color:var(--ink);padding:2px 18px;transform:rotate(-1.5deg);margin:10px 0}
+.lead{color:var(--mu);font-size:19px;margin:14px 0 24px;max-width:46ch}
+.btn{display:inline-block;background:linear-gradient(#3be05a,#12a83a);color:#fff;text-decoration:none;font-family:Impact,'Arial Narrow Bold',sans-serif;font-size:26px;padding:16px 34px;border-radius:999px;box-shadow:0 10px 24px rgba(18,168,58,.35)}
+.btn:focus-visible{outline:3px solid var(--tx);outline-offset:3px}
+.small{font-size:14px;color:var(--mu);margin-top:12px}
+.book{justify-self:center;width:min(300px,80%);aspect-ratio:3/4;background:linear-gradient(135deg,#0c2a2a,#030b10);border:2px solid #1d5c50;border-left:14px solid #010507;border-radius:4px 8px 8px 4px;padding:22px;box-shadow:0 24px 40px rgba(0,0,0,.4);color:#fff;display:flex;flex-direction:column}
+.book b{font-family:Impact,sans-serif;font-weight:400;font-size:44px;line-height:1}
+.book i{font-style:normal;color:var(--grl);font-family:Impact,sans-serif;font-size:24px;margin:4px 0 14px}
+.book svg{flex:1;width:100%;background:#05121a;border:1px solid #1d5c50;border-radius:10px}
+h2{font-size:clamp(30px,5vw,44px);margin-bottom:26px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:14px;padding:22px}
+.card h3{margin:0 0 6px;font-size:19px}.card p{margin:0;color:var(--mu);font-size:16px}
+.ic{width:44px;height:44px;border-radius:50%;background:#0a6b34;border:3px solid var(--grl);display:grid;place-items:center;color:#fff;font-weight:700;margin-bottom:12px}
+.offer{background:var(--bg2);text-align:center}
+.box{max-width:480px;margin:0 auto;background:var(--card);border:2px solid var(--grl);border-radius:20px;padding:32px 24px}
+.old{text-decoration:line-through;color:var(--mu);font-size:22px}
+.price{font-family:Impact,sans-serif;font-size:84px;line-height:1;color:var(--rd);margin:4px 0 14px}
+.box ul{list-style:none;padding:0;margin:0 0 22px;text-align:left}.box li{padding:7px 0 7px 28px;position:relative;border-bottom:1px solid var(--ln)}
+.box li:before{content:"✓";position:absolute;left:0;color:var(--gr);font-weight:700}
+details{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700}details p{color:var(--mu);margin:10px 0 0}
+footer{padding:36px 0 110px;font-size:13px;color:var(--mu);text-align:center;border-top:1px solid var(--ln)}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--ln);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:5}
+.bar .imp{font-size:28px;color:var(--rd)}.bar .btn{font-size:20px;padding:11px 22px}
+@media(max-width:720px){.hero .w{grid-template-columns:1fr}.book{order:-1;width:220px}}
+.pix{background:var(--bg2);text-align:center}.pbox{max-width:480px;margin:0 auto;background:var(--card);border:2px solid var(--grl);border-radius:20px;padding:28px 22px}.qr{display:inline-block;background:#fff;padding:12px;border-radius:12px;min-height:80px;min-width:80px}.qr img,.qr canvas{display:block}.code{width:100%;margin:16px 0 10px;padding:12px;border:1px solid var(--ln);border-radius:10px;background:var(--bg);color:var(--tx);font:13px/1.4 monospace;resize:none;height:84px}.pbox .btn{border:0;cursor:pointer;width:100%;font-size:22px}.pbox .alt{background:#25d366;margin-top:10px;display:block;text-decoration:none;text-align:center;box-shadow:none}.steps{text-align:left;color:var(--mu);font-size:15px;padding-left:20px;margin:18px 0 0}.ok{color:var(--gr);font-weight:700;min-height:22px;margin:8px 0 0}
+.w{max-width:520px}.hero .w{grid-template-columns:1fr;gap:24px}.book{order:-1;width:210px}h1{font-size:40px}h2{font-size:32px;margin-bottom:20px}section{padding:40px 0}.hero{padding:28px 0 36px}body{font-size:16px}.lead{font-size:17px;margin:12px 0 20px}.hero .btn,.box .btn{display:block;text-align:center;width:100%;font-size:24px;padding:15px 20px}.price{font-size:72px}.bar{justify-content:center}
+h1{font-size:34px}h2{font-size:26px;margin-bottom:14px}section{padding:26px 0}.hero{padding:18px 0 24px}.hero .w{gap:14px}body{font-size:15px}.lead{font-size:15px;margin:8px 0 14px}.hero .btn,.box .btn{font-size:21px;padding:12px 18px}.small{font-size:12px;margin-top:8px}.book{width:150px;padding:12px;border-left-width:10px}.book b{font-size:30px}.book i{font-size:16px;margin:2px 0 8px}.grid{grid-template-columns:1fr 1fr;gap:10px}.card{padding:14px;border-radius:12px}.card h3{font-size:15px}.card p{font-size:13px;line-height:1.4}.ic{width:30px;height:30px;font-size:14px;margin-bottom:8px;border-width:2px}.box{padding:20px 18px;border-radius:16px}.old{font-size:17px}.price{font-size:54px;margin:2px 0 8px}.box ul{margin-bottom:14px;font-size:14px}.box li{padding:5px 0 5px 24px}.pbox{padding:18px 16px;border-radius:16px}.pbox .imp{font-size:36px!important}.qr{padding:8px}.pbox .btn{font-size:19px;padding:12px}footer{padding:20px 0 84px;font-size:11px}.bar{padding:8px 14px calc(8px + env(safe-area-inset-bottom,0px))}.bar .imp{font-size:24px}.bar .btn{font-size:17px;padding:9px 18px}
+.pix{display:none}
+</style>
+</head>
+<body>
+<header class="hero"><div class="w">
+ <div>
+  <h1>Entenda o mercado e comece por apenas <span class="brush">R$ 5,90</span></h1>
+  <p class="lead">Um guia prático e direto para quem quer aprender do zero como funcionam os investimentos e o trading, ler gráficos e controlar o risco.</p>
+  <a class="btn" href="https://pay.kiwify.com.br/nnSIQ5g">GARANTIR MEU EXEMPLAR</a>
+  <p class="small">E-book digital · acesso imediato após a compra</p>
+ </div>
+ <div class="book" aria-label="Capa do e-book Trading para Iniciantes">
+  <b>TRADING</b><i>PARA INICIANTES</i>
+  <svg viewBox="0 0 200 150" role="img" aria-label="Gráfico de velas em alta"><g stroke-width="2"><line x1="25" y1="95" x2="25" y2="135" stroke="#22e06b"/><line x1="55" y1="80" x2="55" y2="120" stroke="#ff4d4d"/><line x1="85" y1="65" x2="85" y2="110" stroke="#22e06b"/><line x1="115" y1="45" x2="115" y2="95" stroke="#22e06b"/><line x1="145" y1="50" x2="145" y2="80" stroke="#ff4d4d"/><line x1="175" y1="15" x2="175" y2="65" stroke="#22e06b"/></g><rect x="19" y="105" width="12" height="25" fill="#22e06b"/><rect x="49" y="88" width="12" height="22" fill="#ff4d4d"/><rect x="79" y="72" width="12" height="30" fill="#22e06b"/><rect x="109" y="55" width="12" height="32" fill="#22e06b"/><rect x="139" y="56" width="12" height="18" fill="#ff4d4d"/><rect x="169" y="24" width="12" height="34" fill="#22e06b"/></svg>
+ </div>
+</div></header>
+
+<section><div class="w">
+ <h2>O que você vai aprender</h2>
+ <div class="grid">
+  <div class="card"><div class="ic">1</div><h3>Como o mercado funciona</h3><p>Os conceitos básicos de investimentos e trading, em linguagem simples.</p></div>
+  <div class="card"><div class="ic">2</div><h3>Leitura de gráficos</h3><p>Aprenda a interpretar velas, tendências, suportes e resistências.</p></div>
+  <div class="card"><div class="ic">3</div><h3>Estratégias para iniciantes</h3><p>Exemplos de abordagens para estudar e testar com calma antes de arriscar.</p></div>
+  <div class="card"><div class="ic">4</div><h3>Gestão de risco</h3><p>Como definir limites e proteger o seu dinheiro, que vem antes de qualquer lucro.</p></div>
+ </div>
+</div></section>
+
+<section class="offer" id="comprar"><div class="w">
+ <h2>Oferta de lançamento</h2>
+ <div class="box">
+  <div class="old">De R$ 97,00</div>
+  <div class="price">R$ 5,90</div>
+  <ul><li>E-book completo em PDF</li><li>Conteúdo objetivo, sem enrolação</li><li>Acesso imediato no celular ou computador</li></ul>
+  <a class="btn" href="https://pay.kiwify.com.br/nnSIQ5g">GARANTIR MEU EXEMPLAR</a>
+ </div>
+</div></section>
+
+<section class="pix" id="pix"><div class="w">
+ <h2>Pague com Pix</h2>
+ <div class="pbox">
+  <div class="imp" style="font-size:46px;color:var(--rd)">R$ 5,90</div>
+  <p class="small" style="margin:4px 0 16px">Escaneie o QR Code ou copie o código</p>
+  <div class="qr" id="qr"></div>
+  <textarea class="code" id="code" readonly aria-label="Pix Copia e Cola" style="position:absolute;left:-9999px;opacity:0"></textarea>
+  <button class="btn" id="copy" type="button">COPIAR CÓDIGO PIX</button>
+  <p class="ok" id="ok" role="status"></p>
+  <a id="zap" href="#" hidden style="color:var(--mu);font-size:15px">Já pagou? Enviar comprovante</a>
+  
+ </div>
+</div></section>
+
+<footer><div class="w">Conteúdo educacional. Não é recomendação de investimento. Todo investimento envolve riscos, inclusive de perda do capital.</div></footer>
+
+<div class="bar"><span class="imp">R$ 5,90</span><a class="btn" href="https://pay.kiwify.com.br/nnSIQ5g">COMPRAR AGORA</a></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+/* CONFIGURE AQUI */
+var PIX_KEY='SUA-CHAVE-PIX-AQUI', NOME='SEU NOME', CIDADE='SUA CIDADE', VALOR=5.90, WHATS='';
+function clean(s,n){return s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^A-Za-z0-9 ]/g,'').toUpperCase().slice(0,n)}
+function f(id,v){return id+('0'+v.length).slice(-2)+v}
+function crc(s){var c=0xFFFF;for(var i=0;i<s.length;i++){c^=s.charCodeAt(i)<<8;for(var j=0;j<8;j++)c=(c&0x8000)?((c<<1)^0x1021)&0xFFFF:(c<<1)&0xFFFF}return ('000'+c.toString(16).toUpperCase()).slice(-4)}
+function payload(){var p=f('00','01')+f('26',f('00','br.gov.bcb.pix')+f('01',PIX_KEY))+f('52','0000')+f('53','986')+f('54',VALOR.toFixed(2))+f('58','BR')+f('59',clean(NOME,25))+f('60',clean(CIDADE,15))+f('62',f('05','***'))+'6304';return p+crc(p)}
+var code=document.getElementById('code'),ok=document.getElementById('ok');
+if(PIX_KEY.indexOf('SUA-')===0){ok.textContent='Pagamento por Pix em configuração. Volte em instantes.';document.getElementById('copy').disabled=true}
+else{code.value=payload();try{new QRCode(document.getElementById('qr'),{text:code.value,width:200,height:200,correctLevel:QRCode.CorrectLevel.M})}catch(e){}}
+if(WHATS){var z=document.getElementById('zap');z.hidden=false;z.href='https://wa.me/'+WHATS+'?text='+encodeURIComponent('Olá! Segue o comprovante do Pix do e-book Trading para Iniciantes.')}
+document.getElementById('copy').onclick=function(){try{navigator.clipboard.writeText(code.value).then(function(){ok.textContent='Código copiado! Cole no app do seu banco.'},fb)}catch(e){fb()}function fb(){code.select();try{document.execCommand('copy');ok.textContent='Código copiado! Cole no app do seu banco.'}catch(e){ok.textContent='Selecione o código e copie.'}}};
+</script>
+</body>
+</html>
